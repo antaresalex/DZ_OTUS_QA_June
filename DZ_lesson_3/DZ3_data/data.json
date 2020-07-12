@@ -1,0 +1,618 @@
+[
+    {
+        "name": "Lolita Lynn",
+        "gender": "female",
+        "address": "389 Neptune Avenue, Belfair, Iowa, 6116",
+        "books": [
+            {
+                "title": "Idiot, The",
+                "author": "Dostoevsky, Fyodor",
+                "height": "197"
+            },
+            {
+                "title": "Birth of a Theorem",
+                "author": "Villani, Cedric",
+                "height": "234"
+            },
+            {
+                "title": "Power Electronics - Mohan",
+                "author": "Mohan, Ned",
+                "height": "237"
+            }
+        ]
+    },
+    {
+        "name": "Tonia Hurst",
+        "gender": "female",
+        "address": "917 Terrace Place, Urbana, Idaho, 684",
+        "books": [
+            {
+                "title": "Structure and Randomness",
+                "author": "Tao, Terence",
+                "height": "252"
+            },
+            {
+                "title": "New Machiavelli, The",
+                "author": "Wells, H. G.",
+                "height": "180"
+            },
+            {
+                "title": "Python for Data Analysis",
+                "author": "McKinney, Wes",
+                "height": "233"
+            }
+        ]
+    },
+    {
+        "name": "Brooks Bright",
+        "gender": "male",
+        "address": "901 Mermaid Avenue, Wyoming, Marshall Islands, 8506",
+        "books": [
+            {
+                "title": "Justice, Judiciary and Democracy",
+                "author": "Ranjan, Sudhanshu",
+                "height": "224"
+            },
+            {
+                "title": "Machine Learning for Hackers",
+                "author": "Conway, Drew",
+                "height": "233"
+            },
+            {
+                "title": "Grapes of Wrath, The",
+                "author": "Steinbeck, John",
+                "height": "196"
+            }
+        ]
+    },
+    {
+        "name": "Kathrine Sharp",
+        "gender": "female",
+        "address": "989 Huron Street, Talpa, Utah, 7018",
+        "books": [
+            {
+                "title": "Cathedral and the Bazaar, The",
+                "author": "Raymond, Eric",
+                "height": "217"
+            },
+            {
+                "title": "Phantom of Manhattan, The",
+                "author": "Forsyth, Frederick",
+                "height": "180"
+            },
+            {
+                "title": "In a Free State",
+                "author": "Naipaul, V. S.",
+                "height": "196"
+            }
+        ]
+    },
+    {
+        "name": "Shawn Harrell",
+        "gender": "female",
+        "address": "534 Hinsdale Street, Albany, Palau, 3291",
+        "books": [
+            {
+                "title": "One",
+                "author": "Bach, Richard",
+                "height": "172"
+            },
+            {
+                "title": "Gun Gayin Awadi",
+                "author": "Deshpande, P L",
+                "height": "212"
+            },
+            {
+                "title": "Data Smart",
+                "author": "Foreman, John",
+                "height": "235"
+            }
+        ]
+    },
+    {
+        "name": "Amy Casey",
+        "gender": "female",
+        "address": "589 Townsend Street, Hiseville, Connecticut, 7082",
+        "books": [
+            {
+                "title": "More Tears to Cry",
+                "author": "Sassoon, Jean",
+                "height": "235"
+            },
+            {
+                "title": "To Sir With Love",
+                "author": "Braithwaite",
+                "height": "197"
+            },
+            {
+                "title": "India from Midnight to Milennium",
+                "author": "Tharoor, Shashi",
+                "height": "198"
+            }
+        ]
+    },
+    {
+        "name": "Lorena Mejia",
+        "gender": "female",
+        "address": "614 High Street, Blanford, Maryland, 2776",
+        "books": [
+            {
+                "title": "Burning Bright",
+                "author": "Steinbeck, John",
+                "height": "175"
+            },
+            {
+                "title": "Justice League: The Villain's Journey",
+                "author": "",
+                "height": "258"
+            },
+            {
+                "title": "Murphy's Law",
+                "author": "",
+                "height": "178"
+            }
+        ]
+    },
+    {
+        "name": "Allyson Wilkins",
+        "gender": "female",
+        "address": "572 Downing Street, Ivanhoe, American Samoa, 8235",
+        "books": [
+            {
+                "title": "Justice League: Throne of Atlantis",
+                "author": "",
+                "height": "258"
+            },
+            {
+                "title": "New Markets & Other Essays",
+                "author": "Drucker, Peter",
+                "height": "176"
+            },
+            {
+                "title": "Justice League: Throne of Atlantis",
+                "author": "",
+                "height": "258"
+            }
+        ]
+    },
+    {
+        "name": "Mays Reed",
+        "gender": "male",
+        "address": "306 Georgia Avenue, Hall, New Mexico, 1402",
+        "books": [
+            {
+                "title": "India from Midnight to Milennium",
+                "author": "Tharoor, Shashi",
+                "height": "198"
+            },
+            {
+                "title": "Life in Letters, A",
+                "author": "Steinbeck, John",
+                "height": "196"
+            },
+            {
+                "title": "On Education",
+                "author": "Russell, Bertrand",
+                "height": "203"
+            }
+        ]
+    },
+    {
+        "name": "Katherine Mayer",
+        "gender": "female",
+        "address": "640 Prescott Place, Curtice, Kansas, 3395",
+        "books": [
+            {
+                "title": "One",
+                "author": "Bach, Richard",
+                "height": "172"
+            },
+            {
+                "title": "Last Lecture, The",
+                "author": "Pausch, Randy",
+                "height": "197"
+            },
+            {
+                "title": "Angels & Demons",
+                "author": "Brown, Dan",
+                "height": "178"
+            }
+        ]
+    },
+    {
+        "name": "Kelly Byers",
+        "gender": "female",
+        "address": "865 Revere Place, Homeland, Arizona, 232",
+        "books": [
+            {
+                "title": "Journal of a Novel",
+                "author": "Steinbeck, John",
+                "height": "196"
+            },
+            {
+                "title": "Ashenden of The British Agent",
+                "author": "Maugham, William S",
+                "height": "160"
+            },
+            {
+                "title": "O Jerusalem!",
+                "author": "Lapierre, Dominique",
+                "height": "217"
+            }
+        ]
+    },
+    {
+        "name": "Schwartz Carey",
+        "gender": "male",
+        "address": "860 Centre Street, Hiwasse, Nevada, 2819",
+        "books": [
+            {
+                "title": "We the People",
+                "author": "Palkhivala",
+                "height": "216"
+            },
+            {
+                "title": "Dylan on Dylan",
+                "author": "Dylan, Bob",
+                "height": "197"
+            },
+            {
+                "title": "Brethren, The",
+                "author": "Grisham, John",
+                "height": "174"
+            }
+        ]
+    },
+    {
+        "name": "Kay Beasley",
+        "gender": "female",
+        "address": "358 Sutton Street, Bellamy, Ohio, 8845",
+        "books": [
+            {
+                "title": "Physics & Philosophy",
+                "author": "Heisenberg, Werner",
+                "height": "197"
+            },
+            {
+                "title": "Last Mughal, The",
+                "author": "Dalrymple, William",
+                "height": "199"
+            },
+            {
+                "title": "Textbook of Economic Theory",
+                "author": "Stonier, Alfred",
+                "height": "242"
+            }
+        ]
+    },
+    {
+        "name": "Robbins Gordon",
+        "gender": "male",
+        "address": "610 Langham Street, Boykin, Guam, 6688",
+        "books": [
+            {
+                "title": "Urlasurla",
+                "author": "Deshpande P L",
+                "height": "211"
+            },
+            {
+                "title": "Making Software",
+                "author": "Oram, Andy",
+                "height": "232"
+            },
+            {
+                "title": "Girl who played with Fire",
+                "author": "Larsson, Steig",
+                "height": "179"
+            }
+        ]
+    },
+    {
+        "name": "Hillary Bauer",
+        "gender": "female",
+        "address": "951 Cumberland Street, Alleghenyville, Oregon, 7073",
+        "books": [
+            {
+                "title": "Angels & Demons",
+                "author": "Brown, Dan",
+                "height": "170"
+            },
+            {
+                "title": "Eyeless in Gaza",
+                "author": "Huxley, Aldous",
+                "height": "180"
+            },
+            {
+                "title": "Jim Corbett Omnibus",
+                "author": "Corbett, Jim",
+                "height": "223"
+            }
+        ]
+    },
+    {
+        "name": "Ruiz Phelps",
+        "gender": "male",
+        "address": "836 Troutman Street, Harborton, Kentucky, 4030",
+        "books": [
+            {
+                "title": "Story of Philosophy, The",
+                "author": "Durant, Will",
+                "height": "170"
+            },
+            {
+                "title": "Rationality & Freedom",
+                "author": "Sen, Amartya",
+                "height": "213"
+            },
+            {
+                "title": "Brethren, The",
+                "author": "Grisham, John",
+                "height": "174"
+            }
+        ]
+    },
+    {
+        "name": "Carolina Bryant",
+        "gender": "female",
+        "address": "377 Middagh Street, Ellerslie, Nebraska, 2644",
+        "books": [
+            {
+                "title": "History of Western Philosophy",
+                "author": "Russell, Bertrand",
+                "height": "213"
+            },
+            {
+                "title": "Brethren, The",
+                "author": "Grisham, John",
+                "height": "174"
+            },
+            {
+                "title": "Superfreakonomics",
+                "author": "Dubner, Stephen",
+                "height": "179"
+            }
+        ]
+    },
+    {
+        "name": "Sosa Lee",
+        "gender": "male",
+        "address": "364 Holly Street, Omar, California, 5140",
+        "books": [
+            {
+                "title": "Image Processing & Mathematical Morphology",
+                "author": "Shih, Frank",
+                "height": "241"
+            },
+            {
+                "title": "Mein Kampf",
+                "author": "Hitler, Adolf",
+                "height": "212"
+            },
+            {
+                "title": "Jurassic Park",
+                "author": "Crichton, Michael",
+                "height": "174"
+            }
+        ]
+    },
+    {
+        "name": "Lorna Scott",
+        "gender": "female",
+        "address": "878 Marconi Place, Gerton, Alabama, 845",
+        "books": [
+            {
+                "title": "Design with OpAmps",
+                "author": "Franco, Sergio",
+                "height": "240"
+            },
+            {
+                "title": "On Education",
+                "author": "Russell, Bertrand",
+                "height": "203"
+            },
+            {
+                "title": "Winter of Our Discontent, The",
+                "author": "Steinbeck, John",
+                "height": "196"
+            }
+        ]
+    },
+    {
+        "name": "Bernard Holden",
+        "gender": "male",
+        "address": "674 Pine Street, Conestoga, Mississippi, 4727",
+        "books": [
+            {
+                "title": "Batman Handbook",
+                "author": "",
+                "height": "270"
+            },
+            {
+                "title": "Trial, The",
+                "author": "Kafka, Frank",
+                "height": "198"
+            },
+            {
+                "title": "Trial, The",
+                "author": "Kafka, Frank",
+                "height": "198"
+            }
+        ]
+    },
+    {
+        "name": "Craft Shields",
+        "gender": "male",
+        "address": "586 Java Street, Catherine, Arkansas, 1445",
+        "books": [
+            {
+                "title": "Doctor on the Brain",
+                "author": "Gordon, Richard",
+                "height": "204"
+            },
+            {
+                "title": "Age of Wrath, The",
+                "author": "Eraly, Abraham",
+                "height": "238"
+            },
+            {
+                "title": "Half A Life",
+                "author": "Naipaul, V S",
+                "height": "196"
+            }
+        ]
+    },
+    {
+        "name": "Mara English",
+        "gender": "female",
+        "address": "324 Herkimer Court, Boomer, Delaware, 5367",
+        "books": [
+            {
+                "title": "Hunchback of Notre Dame, The",
+                "author": "Hugo, Victor",
+                "height": "175"
+            },
+            {
+                "title": "Flashpoint",
+                "author": "",
+                "height": "265"
+            },
+            {
+                "title": "Pattern Classification",
+                "author": "Duda, Hart",
+                "height": "241"
+            }
+        ]
+    },
+    {
+        "name": "Fisher Levy",
+        "gender": "male",
+        "address": "540 Adler Place, Hachita, Federated States Of Micronesia, 9894",
+        "books": [
+            {
+                "title": "Batatyachi Chal",
+                "author": "Deshpande P L",
+                "height": "200"
+            },
+            {
+                "title": "History of England, Foundation",
+                "author": "Ackroyd, Peter",
+                "height": "197"
+            },
+            {
+                "title": "Pointers in C",
+                "author": "Kanetkar, Yashwant",
+                "height": "213"
+            }
+        ]
+    },
+    {
+        "name": "Cecelia Snyder",
+        "gender": "female",
+        "address": "236 Anchorage Place, Odessa, Michigan, 6314",
+        "books": [
+            {
+                "title": "Talking Straight",
+                "author": "Iacoca, Lee",
+                "height": "175"
+            },
+            {
+                "title": "Freakonomics",
+                "author": "Dubner, Stephen",
+                "height": "197"
+            },
+            {
+                "title": "God Created the Integers",
+                "author": "Hawking, Stephen",
+                "height": "197"
+            }
+        ]
+    },
+    {
+        "name": "Nina Kaufman",
+        "gender": "female",
+        "address": "538 Ashford Street, Boling, West Virginia, 7840",
+        "books": [
+            {
+                "title": "Return of the Primitive",
+                "author": "Rand, Ayn",
+                "height": "202"
+            },
+            {
+                "title": "Data Scientists at Work",
+                "author": "Sebastian Gutierrez",
+                "height": "230"
+            },
+            {
+                "title": "Drunkard's Walk, The",
+                "author": "Mlodinow, Leonard",
+                "height": "197"
+            }
+        ]
+    },
+    {
+        "name": "Dillard Branch",
+        "gender": "male",
+        "address": "225 Hampton Avenue, Bethany, Pennsylvania, 8056",
+        "books": [
+            {
+                "title": "Structure & Interpretation of Computer Programs",
+                "author": "Sussman, Gerald",
+                "height": "240"
+            },
+            {
+                "title": "Ropemaker, The",
+                "author": "Dickinson, Peter",
+                "height": "196"
+            },
+            {
+                "title": "City of Joy, The",
+                "author": "Lapierre, Dominique",
+                "height": "177"
+            }
+        ]
+    },
+    {
+        "name": "Dyer Bartlett",
+        "gender": "male",
+        "address": "880 Meadow Street, Seymour, Puerto Rico, 7921",
+        "books": [
+            {
+                "title": "We the Living",
+                "author": "Rand, Ayn",
+                "height": "178"
+            },
+            {
+                "title": "Superman Earth One - 2",
+                "author": "",
+                "height": "258"
+            },
+            {
+                "title": "Animal Farm",
+                "author": "Orwell, George",
+                "height": "180"
+            }
+        ]
+    },
+    {
+        "name": "Tyler Dotson",
+        "gender": "male",
+        "address": "220 Herkimer Place, Turpin, Oklahoma, 4468",
+        "books": [
+            {
+                "title": "Discovery of India, The",
+                "author": "Nehru, Jawaharlal",
+                "height": "230"
+            },
+            {
+                "title": "Journal of a Novel",
+                "author": "Steinbeck, John",
+                "height": "196"
+            },
+            {
+                "title": "Killing Joke, The",
+                "author": "",
+                "height": "283"
+            }
+        ]
+    }
+]
