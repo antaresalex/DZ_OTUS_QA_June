@@ -1,14 +1,29 @@
 import pytest
 import requests
+import json
 
-#Тестируем получение статус кода 200 OK
-def test_breed_random(fixture_dogceo_random):
-	url = f'https://dog.ceo/api/breed/{fixture_dogceo_random}/images/random'
+#Тестируем получение json со всеми породами LIST ALL BREEDS
+#https://dog.ceo/api/breeds/list/all
+#записываем его в json breeds.json
+def test_all_breeds_list():
+	url = 'https://dog.ceo/api/breeds/list/all'
 	responce = requests.get(url=url)
+	with open('breeds.json', 'w') as breed_data:
+		responce = json.dumps(responce, indent=4)
+		breed_data.write(responce)
 	assert responce.status_code == 200
 
+#Тестируем получение SINGLE RANDOM IMAGE FROM ALL DOGS
 
-#Проверка рандомного получения пароды
+#Тестируем получение всех картинок по указанной породе
+
+#Тестируем получение LIST ALL SUB-BREEDS по запрашиваемой породе
+
+#Проверка рандомного получения фото из породы BREEDS LIST
+# def test_breed_random(fixture_dogceo_random):
+# 	url = f'https://dog.ceo/api/breed/{fixture_dogceo_random}/images/random'
+# 	responce = requests.get(url=url)
+# 	assert responce.status_code == 200
 
 # #Тестируем метод c параметризацией
 # #Тестируем метод sort у list
