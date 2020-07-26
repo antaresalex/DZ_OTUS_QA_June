@@ -80,3 +80,4 @@ def test_breeds_image_random_one(fixture_dog_api_url):
     jpg_symbol = ['.jpg']
     coincidental = [e for e in jpg_symbol if e in image_random]
     assert coincidental == jpg_symbol
+    
