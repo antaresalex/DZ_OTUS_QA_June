@@ -3,3 +3,4 @@ __pycache__
 vscode
 geckodriver.log
 .idea
+docker-compose.yml
