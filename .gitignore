@@ -1,3 +1,5 @@
 env
 __pycache__
 vscode
+geckodriver.log
+.idea
