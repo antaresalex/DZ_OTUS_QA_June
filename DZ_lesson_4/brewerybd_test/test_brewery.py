@@ -14,7 +14,7 @@ def test_city(url_city):
         for bar in json_response:
             assert bar.get('city') == url_city
     else:
-        assert list == type(json_response)
+        print("This response return empty json")
 
 
 # Тестируем получение json by_type, с параметризацией из списка элементов (micro, regional, brewpub, large, planning,

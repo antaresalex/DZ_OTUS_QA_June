@@ -40,3 +40,5 @@ def pytest_generate_tests(metafunc):
             brewery_list = [brewery_id, brewery_name]
             brewery_list_all.append(brewery_list)
         return metafunc.parametrize('test_input, expected_result', brewery_list_all)
+    else:
+        raise Exception('RequestException, HTTP Code != 200')
