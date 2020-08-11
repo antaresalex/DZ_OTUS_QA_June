@@ -9,7 +9,7 @@ from webdrivermanager import ChromeDriverManager
 
 def pytest_addoption(parser):
     parser.addoption('--browser', '-B', action="store", default='chrome', required=False,
-                     choices=['chrome', 'firefox', 'ie'], help='choose browser for testing')
+                     choices=['chrome', 'firefox'], help='choose browser for testing')
     parser.addoption("--url", "-U", action="store", default="http://localhost/", help="enter your url")
 
 
@@ -23,6 +23,7 @@ def browser(request):
         option.add_argument('--kiosk')
         option.headless = True
         browser = webdriver.Chrome(options=option)
+        browser.implicitly_wait(5)
         request.addfinalizer(browser.quit)
         return browser
     elif browser_type == 'firefox':
@@ -32,6 +33,7 @@ def browser(request):
         option.add_argument('--kiosk')
         option.headless = True
         browser = webdriver.Firefox(options=option)
+        browser.implicitly_wait(5)
         request.addfinalizer(browser.quit)
         return browser
     else:
