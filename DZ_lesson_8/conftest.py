@@ -21,7 +21,7 @@ def browser(request):
         cdm.download_and_install()
         option = ChromeOptions()
         option.add_argument('--kiosk')
-        option.headless = True
+        # option.headless = True
         browser = webdriver.Chrome(options=option)
         browser.implicitly_wait(5)
         request.addfinalizer(browser.quit)
@@ -31,7 +31,7 @@ def browser(request):
         gdm.download_and_install()
         option = FirefoxOptions()
         option.add_argument('--kiosk')
-        option.headless = True
+        # option.headless = True
         browser = webdriver.Firefox(options=option)
         browser.implicitly_wait(5)
         request.addfinalizer(browser.quit)
