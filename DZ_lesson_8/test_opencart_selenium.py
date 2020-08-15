@@ -1,5 +1,6 @@
-import pytest
 import time
+
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 
@@ -17,7 +18,8 @@ def test_example(browser, url):
 # Тест 1 открытия Privacy Policy
 def test_click_privacy_policy(browser, url):
     browser.get(url)
-    browser.find_element_by_css_selector('body footer div div div:nth-child(1) ul li:nth-child(3) a').send_keys(Keys.END)
+    browser.find_element_by_css_selector('body footer div div div:nth-child(1) ul li:nth-child(3) a').send_keys(
+        Keys.END)
     element = browser.find_element_by_css_selector('body footer div div div:nth-child(1) ul li:nth-child(3) a')
     element.click()
     new_pade_element = browser.find_element_by_css_selector('#content h1')
@@ -71,13 +73,16 @@ def test_featured_price(browser, url):
 # Тест 5 Переключение картинок в первом слайдбаре
 def test_show_next_slide(browser, url):
     browser.get(url)
-    swiper = browser.find_element_by_css_selector('#content .swiper-button-next')
-    swiper.click()
-    #дождаться наличия элемента
-    # slideshow0 > div > div.swiper-slide.text-center.swiper-slide-duplicate.swiper-slide-duplicate-active
-    #клик
-    # проврить наличие другого элемента после клика
-    # slideshow0 > div > div.swiper-slide.text-center.swiper-slide-duplicate.swiper-slide-next.swiper-slide-duplicate-prev
+    try:
+        element_size = browser.find_element_by_css_selector(
+            "#slideshow0 > div > div.swiper-slide.text-center.swiper-slide-active > img").size
+    except NoSuchElementException:
+        time.sleep(3)
+        swiper = browser.find_element_by_css_selector('#content .swiper-button-next')
+        swiper.click()
+        element_size = browser.find_element_by_css_selector(
+            "#slideshow0 > div > div.swiper-slide.text-center.swiper-slide-active > img").size
+    assert element_size != 0
 
 
 # Каталог /index.php?route=product/category&path=20
