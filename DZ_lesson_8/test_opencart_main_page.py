@@ -1,8 +1,14 @@
-import pytest
+from functools import reduce
 
-from selenium.common.exceptions import NoSuchElementException
+import pytest
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
+from PIL import Image
+import math
+import operator
+
+
+# Тестируем Главную /
 
 
 # Тестируем сайт, что он связан с OpenCart
@@ -13,7 +19,6 @@ def test_example(browser, url):
     assert element.text == 'OpenCart'
 
 
-# Тестируем Главную /
 # Тест 1 открытия Privacy Policy
 def test_click_privacy_policy(browser, url):
     browser.get(url)
@@ -25,7 +30,6 @@ def test_click_privacy_policy(browser, url):
     assert new_pade_element.text == 'Privacy Policy'
 
 
-# Тестируем Главную /
 # Тест 2 Featured Macbook открытия карточки с товаром по клику на картинку
 def test_click_featured_picture(browser, url):
     browser.get(url)
@@ -39,7 +43,6 @@ def test_click_featured_picture(browser, url):
     assert new_pade_element.text == name_element
 
 
-# Тестируем Главную /
 # Тест 3 Featured Macbook открытия карточки с товаром по клику на название
 def test_click_featured_name(browser, url):
     browser.get(url)
@@ -49,11 +52,10 @@ def test_click_featured_name(browser, url):
     name_element = browser.find_element_by_css_selector('.product-layout .caption a').text
     actions.perform()
     element.click()
-    new_pade_element = browser.find_element_by_css_selector('#content .col-sm-4 h1')
-    assert new_pade_element.text == name_element
+    product_name = browser.find_element_by_css_selector('#content .col-sm-4 h1')
+    assert product_name.text == name_element
 
 
-# Тестируем Главную /
 # Тест 4 Featured по стоимости
 @pytest.mark.parametrize("product_index", [0, 1, 2, 3])
 def test_featured_price(browser, url, product_index):
@@ -69,19 +71,31 @@ def test_featured_price(browser, url, product_index):
     assert new_pade_element.text == price_element
 
 
-# Тестируем Главную /
 # Тест 5 Переключение картинок в первом слайдбаре
 def test_show_next_slide(browser, url):
     browser.get(url)
-    try:
-        element_size = browser.find_element_by_css_selector(
-            "#slideshow0 > div > div.swiper-slide.text-center.swiper-slide-active > img").size
-    except NoSuchElementException:
-        swiper = browser.find_element_by_css_selector('#content .swiper-button-next')
-        swiper.click()
-        element_size = browser.find_element_by_css_selector(
-            "#slideshow0 > div > div.swiper-slide.text-center.swiper-slide-active > img").size
-    assert element_size != 0
+    swiper = browser.find_element_by_css_selector('#content .swiper-button-next')
+    swiper.click()
+    picture_slide_first = browser.find_element_by_css_selector(
+            '.swiper-viewport #slideshow0')
+    picture_slide_first.screenshot('picture_slide_first.png')
+    swiper.click()
+    picture_slide_second = browser.find_element_by_css_selector(
+            '.swiper-viewport #slideshow0')
+    picture_slide_second.screenshot('picture_slide_second.png')
+    # image_one = Image.open('picture_slide_first.png').convert('RGB')
+    # image_two = Image.open('picture_slide_second.png').convert('RGB')
+    # diff = ImageChops.difference(image_one, image_two)
+    h1 = Image.open('picture_slide_first.png').histogram()
+    h2 = Image.open('picture_slide_second.png').histogram()
+    rms = math.sqrt(reduce(operator.add,
+                           map(lambda a, b: (a - b) ** 2, h1, h2)) / len(h1))
+    print(rms)
+    if rms <= 90:
+        diff = "Identical"
+    else:
+        diff = "Different"
+    assert diff == "Different"
 
 
 # Каталог /index.php?route=product/category&path=20
