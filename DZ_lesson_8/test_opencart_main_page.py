@@ -1,4 +1,4 @@
-import time
+import pytest
 
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
@@ -9,7 +9,6 @@ from selenium.webdriver.common.action_chains import ActionChains
 def test_example(browser, url):
     browser.get(url)
     browser.find_element_by_css_selector('footer p a').send_keys(Keys.END)
-    time.sleep(5)
     element = browser.find_element_by_css_selector('a[href="http://www.opencart.com"]')
     assert element.text == 'OpenCart'
 
@@ -56,16 +55,17 @@ def test_click_featured_name(browser, url):
 
 # Тестируем Главную /
 # Тест 4 Featured по стоимости
-def test_featured_price(browser, url):
+@pytest.mark.parametrize("product_index", [0, 1, 2, 3])
+def test_featured_price(browser, url, product_index):
     browser.get(url)
-    price_element = browser.find_element_by_css_selector('.product-layout .price')
-    price_element.location_once_scrolled_into_view
-    price_element = str(browser.find_element_by_css_selector('.product-layout .price').text)
+    element = browser.find_elements_by_css_selector('.product-layout')[product_index]
+    element.location_once_scrolled_into_view
+    price_element = str(element.find_element_by_css_selector('.product-layout .price').text)
     price_element = price_element.split('\n')[0]
-    element = browser.find_element_by_css_selector('.product-layout .caption a')
-    element.click()
+    price_element = price_element.split(' ')[0]
+    element_name = element.find_element_by_css_selector('.product-layout .caption a')
+    element_name.click()
     new_pade_element = browser.find_element_by_css_selector('#content .row .col-sm-4 h2')
-    print(new_pade_element.text)
     assert new_pade_element.text == price_element
 
 
@@ -77,7 +77,6 @@ def test_show_next_slide(browser, url):
         element_size = browser.find_element_by_css_selector(
             "#slideshow0 > div > div.swiper-slide.text-center.swiper-slide-active > img").size
     except NoSuchElementException:
-        time.sleep(3)
         swiper = browser.find_element_by_css_selector('#content .swiper-button-next')
         swiper.click()
         element_size = browser.find_element_by_css_selector(
