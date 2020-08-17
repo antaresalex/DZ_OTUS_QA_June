@@ -1,5 +1,5 @@
 from functools import reduce
-
+import time
 import pytest
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
@@ -46,11 +46,13 @@ def test_click_featured_picture(browser, url):
 # Тест 3 Featured Macbook открытия карточки с товаром по клику на название
 def test_click_featured_name(browser, url):
     browser.get(url)
-    element = browser.find_element_by_css_selector('.product-layout .caption a')
+    element = browser.find_elements_by_css_selector('.product-layout .product-thumb')[0]
     actions = ActionChains(browser)
     actions.move_to_element(element)
+    time.sleep(3)
     name_element = browser.find_element_by_css_selector('.product-layout .caption a').text
     actions.perform()
+    time.sleep(3)
     element.click()
     product_name = browser.find_element_by_css_selector('#content .col-sm-4 h1')
     assert product_name.text == name_element
@@ -96,7 +98,3 @@ def test_show_next_slide(browser, url):
     else:
         diff = "Different"
     assert diff == "Different"
-
-
-# Каталог /index.php?route=product/category&path=20
-# Страницу логина в админку /admin/

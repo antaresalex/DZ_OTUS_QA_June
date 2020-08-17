@@ -27,7 +27,7 @@ def browser(request):
         browser.implicitly_wait(5)
         request.addfinalizer(browser.quit)
         return browser
-    elif browser_type == 'firefox':
+    if browser_type == 'firefox':
         gdm = GeckoDriverManager()
         gdm.download_and_install()
         option = FirefoxOptions()
