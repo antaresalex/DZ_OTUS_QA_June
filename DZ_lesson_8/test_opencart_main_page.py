@@ -1,5 +1,4 @@
 from functools import reduce
-import time
 import pytest
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
@@ -49,10 +48,8 @@ def test_click_featured_name(browser, url):
     element = browser.find_elements_by_css_selector('.product-layout .product-thumb')[0]
     actions = ActionChains(browser)
     actions.move_to_element(element)
-    time.sleep(3)
     name_element = browser.find_element_by_css_selector('.product-layout .caption a').text
     actions.perform()
-    time.sleep(3)
     element.click()
     product_name = browser.find_element_by_css_selector('#content .col-sm-4 h1')
     assert product_name.text == name_element
