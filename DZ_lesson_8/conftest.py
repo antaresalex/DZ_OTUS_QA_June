@@ -2,6 +2,7 @@ import requests
 import pytest
 from selenium import webdriver
 from selenium.webdriver import FirefoxOptions
+from selenium.webdriver.support.wait import WebDriverWait
 from webdrivermanager import GeckoDriverManager
 from selenium.webdriver import ChromeOptions
 from webdrivermanager import ChromeDriverManager
@@ -24,7 +25,7 @@ def browser(request):
         option.add_argument('--ignore-certificate-errors')
         # option.headless = True
         browser = webdriver.Chrome(options=option)
-        browser.implicitly_wait(5)
+        # browser.implicitly_wait(5)
         request.addfinalizer(browser.quit)
         return browser
     if browser_type == 'firefox':
@@ -44,3 +45,9 @@ def browser(request):
 @pytest.fixture
 def url(request):
     return request.config.getoption("--url")
+
+
+@pytest.fixture
+def wait(browser):
+    wait = WebDriverWait(browser, 5)
+    yield wait
