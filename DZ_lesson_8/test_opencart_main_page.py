@@ -1,5 +1,7 @@
 from functools import reduce
 import pytest
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from PIL import Image
@@ -11,10 +13,10 @@ import operator
 
 
 # Тестируем сайт, что он связан с OpenCart
-def test_example(browser, url):
+def test_example(browser, url, wait):
     browser.get(url)
     browser.find_element_by_css_selector('footer p a').send_keys(Keys.END)
-    element = browser.find_element_by_css_selector('a[href="http://www.opencart.com"]')
+    element = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[href="http://www.opencart.com"]')))
     assert element.text == 'OpenCart'
 
 
@@ -43,7 +45,7 @@ def test_click_featured_picture(browser, url):
 
 
 # Тест 3 Featured Macbook открытия карточки с товаром по клику на название
-def test_click_featured_name(browser, url):
+def test_click_featured_name(browser, url, wait):
     browser.get(url)
     element = browser.find_elements_by_css_selector('.product-layout .product-thumb')[0]
     actions = ActionChains(browser)
@@ -71,7 +73,7 @@ def test_featured_price(browser, url, product_index):
 
 
 # Тест 5 Переключение картинок в первом слайдбаре
-def test_show_next_slide(browser, url):
+def test_show_next_slide(browser, url, wait):
     browser.get(url)
     swiper = browser.find_element_by_css_selector('#content .swiper-button-next')
     swiper.click()

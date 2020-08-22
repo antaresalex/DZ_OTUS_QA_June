@@ -2,9 +2,6 @@ import pytest
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.wait import WebDriverWait
-
-# Добавить явные ожидания
 
 
 # Тест перехода к разделу с товарами в админке, что появляется таблица с товарами.
