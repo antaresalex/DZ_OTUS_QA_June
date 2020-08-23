@@ -16,6 +16,7 @@ import operator
 def test_example(browser, url, wait):
     browser.get(url)
     browser.find_element_by_css_selector('footer p a').send_keys(Keys.END)
+    # browser.execute_script('window.scrollTo(0, document.body.scrollHeight);')
     element = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[href="http://www.opencart.com"]')))
     assert element.text == 'OpenCart'
 

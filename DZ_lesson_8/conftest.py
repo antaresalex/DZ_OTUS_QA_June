@@ -22,6 +22,7 @@ def browser(request):
         cdm.download_and_install()
         option = ChromeOptions()
         option.add_argument('--kiosk')
+        # option.add_argument('--disable-popup-blocking')
         option.add_argument('--ignore-certificate-errors')
         # option.headless = True
         browser = webdriver.Chrome(options=option)
