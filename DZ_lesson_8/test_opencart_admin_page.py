@@ -79,14 +79,15 @@ def test_admin_add_new_customer(browser, url, wait):
     checkbox.click()
     browser.find_element_by_css_selector('[data-original-title="Delete"]').click()
     time.sleep(3)
+    # так работает для чистки пользователя в firefox
     wait.until(EC.alert_is_present())
     browser.switch_to.alert.accept()
     # alert = browser.switch_to.alert
     # alert.accept()
     # ActionChains(browser).pause(1).perform()
     # Alert(browser).accept()
-    # js_confirm = 'window.alert = function(){return true;}'
-    # browser.execute_script(js_confirm)
-    # browser.find_element_by_link_text('Are you sure?').click()
-    # browser.execute_script('return window.alert')
+    # так работает для чистки пользователя в chrome
+    js_confirm = 'alert = function(){return true;}'
+    browser.execute_script(js_confirm)
+    browser.execute_script('return alert')
     assert success_text_alert == 'Success'
