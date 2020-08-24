@@ -3,3 +3,6 @@ __pycache__
 vscode
 geckodriver.log
 .idea
+.vscode
+.idea
+.DS_Store
