@@ -83,4 +83,6 @@ def test_admin_add_new_customer(browser, url, wait):
     browser.switch_to.alert.accept()
     # alert = browser.switch_to.alert
     # alert.accept()
+    # ActionChains(browser).pause(1).perform()
+    # Alert(browser).accept()
     assert success_text_alert == 'Success'
