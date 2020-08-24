@@ -1,5 +1,6 @@
 env
 __pycache__
-vscode
+.vscode
 geckodriver.log
 .idea
+.DS_Store
