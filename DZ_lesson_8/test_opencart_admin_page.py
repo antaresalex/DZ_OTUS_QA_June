@@ -6,48 +6,48 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 from selenium.webdriver.common.alert import Alert
 
-#
-# # Тест перехода к разделу с товарами в админке, что появляется таблица с товарами.
-# def test_admin_product_table(browser, url, wait):
-#     admin_login_page_url = url + f'/admin/'
-#     browser.get(admin_login_page_url)
-#     user_name = 'user'
-#     user_password = 'bitnami1'
-#     browser.find_element_by_css_selector('#input-username').send_keys(user_name)
-#     browser.find_element_by_css_selector('#input-password').send_keys(user_password)
-#     browser.find_element_by_css_selector('[type="submit"]').click()
-#     browser.find_element_by_css_selector('#menu-catalog .collapsed').click()
-#     el = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '#collapse1.collapse li:nth-child(2) a')))
-#     el.click()
-#     table_element = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'table.table')))
-#     table_element_visible = table_element.is_displayed()
-#     assert table_element_visible is True
-#
-#
-# # Реализовать 2 тестовых сценария на раздел администратора
-# # Тест добавления нового продукта в каталог администратором
-# def test_admin_add_new_product(browser, url, wait):
-#     admin_login_page_url = url + f'/admin/'
-#     browser.get(admin_login_page_url)
-#     user_name = 'user'
-#     user_password = 'bitnami1'
-#     test_product = 'Test Product Name'
-#     browser.find_element_by_css_selector('#input-username').send_keys(user_name)
-#     browser.find_element_by_css_selector('#input-password').send_keys(user_password)
-#     browser.find_element_by_css_selector('[type="submit"]').click()
-#     browser.find_element_by_css_selector('#menu-catalog .collapsed').click()
-#     el = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '#collapse1.collapse li:nth-child(2) a')))
-#     el.click()
-#     browser.find_element_by_css_selector('[data-original-title="Add New"]').click()
-#     browser.find_element_by_css_selector('#input-name1').send_keys(test_product)
-#     browser.find_element_by_css_selector('#input-meta-title1').send_keys(test_product)
-#     browser.find_element_by_link_text('Data').click()
-#     browser.find_element_by_css_selector('#input-model').send_keys('Product 15')
-#     browser.find_element_by_css_selector('[data-original-title="Save"]').click()
-#     browser.find_element_by_css_selector('#input-name').send_keys(test_product)
-#     browser.find_element_by_css_selector('.form-group #button-filter').click()
-#     product_table_content = browser.find_element_by_css_selector('tbody .text-left').text
-#     assert test_product == product_table_content
+
+# Тест перехода к разделу с товарами в админке, что появляется таблица с товарами.
+def test_admin_product_table(browser, url, wait):
+    admin_login_page_url = url + f'/admin/'
+    browser.get(admin_login_page_url)
+    user_name = 'user'
+    user_password = 'bitnami1'
+    browser.find_element_by_css_selector('#input-username').send_keys(user_name)
+    browser.find_element_by_css_selector('#input-password').send_keys(user_password)
+    browser.find_element_by_css_selector('[type="submit"]').click()
+    browser.find_element_by_css_selector('#menu-catalog .collapsed').click()
+    el = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '#collapse1.collapse li:nth-child(2) a')))
+    el.click()
+    table_element = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'table.table')))
+    table_element_visible = table_element.is_displayed()
+    assert table_element_visible is True
+
+
+# Реализовать 2 тестовых сценария на раздел администратора
+# Тест добавления нового продукта в каталог администратором
+def test_admin_add_new_product(browser, url, wait):
+    admin_login_page_url = url + f'/admin/'
+    browser.get(admin_login_page_url)
+    user_name = 'user'
+    user_password = 'bitnami1'
+    test_product = 'Test Product Name'
+    browser.find_element_by_css_selector('#input-username').send_keys(user_name)
+    browser.find_element_by_css_selector('#input-password').send_keys(user_password)
+    browser.find_element_by_css_selector('[type="submit"]').click()
+    browser.find_element_by_css_selector('#menu-catalog .collapsed').click()
+    el = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '#collapse1.collapse li:nth-child(2) a')))
+    el.click()
+    browser.find_element_by_css_selector('[data-original-title="Add New"]').click()
+    browser.find_element_by_css_selector('#input-name1').send_keys(test_product)
+    browser.find_element_by_css_selector('#input-meta-title1').send_keys(test_product)
+    browser.find_element_by_link_text('Data').click()
+    browser.find_element_by_css_selector('#input-model').send_keys('Product 15')
+    browser.find_element_by_css_selector('[data-original-title="Save"]').click()
+    browser.find_element_by_css_selector('#input-name').send_keys(test_product)
+    browser.find_element_by_css_selector('.form-group #button-filter').click()
+    product_table_content = browser.find_element_by_css_selector('tbody .text-left').text
+    assert test_product == product_table_content
 
 
 # Реализовать 2 тестовых сценария на раздел администратора
@@ -85,4 +85,8 @@ def test_admin_add_new_customer(browser, url, wait):
     # alert.accept()
     # ActionChains(browser).pause(1).perform()
     # Alert(browser).accept()
+    # js_confirm = 'window.alert = function(){return true;}'
+    # browser.execute_script(js_confirm)
+    # browser.find_element_by_link_text('Are you sure?').click()
+    # browser.execute_script('return window.alert')
     assert success_text_alert == 'Success'
