@@ -20,7 +20,7 @@ def test_add_wish_list(browser, url, product_id, wait):
     # нажимаем на добавить в виш лист
     wish_list_button = browser.find_element_by_css_selector('[data-original-title="Add to Wish List"]')
     wish_list_button.click()
-    # ждем успешного аллерта и получаем текст аллерта
+    # ждем успешного аллерта
     alert = wait.until((EC.visibility_of_element_located((By.CSS_SELECTOR, '.alert-success'))))
     # переходим из аллерта в логин (надо переходить в виш лист, а логинется до теста)
     alert.find_element_by_link_text('login').click()
@@ -50,7 +50,7 @@ def test_add_cart(browser, url, product_id, wait):
     # нажимаем на добавить в корзину
     cart_button = browser.find_element_by_css_selector('#button-cart')
     cart_button.click()
-    # ждем успешного аллерта и получаем текст аллерта
+    # ждем успешного аллерта
     alert = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.alert-success')))
     # переходим из аллерта в корзину
     alert.find_element_by_link_text('shopping cart').click()
@@ -80,9 +80,9 @@ def test_reviews(browser, url, product_id, wait):
     browser.find_element_by_css_selector('.pull-right #button-review').send_keys(Keys.END)
     button = browser.find_element_by_css_selector('.pull-right #button-review')
     button.click()
-    # ждем успешного аллерта и получаем текст аллерта
+    # ждем успешного аллерта
     alert = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.alert-success')))
-    alert_text = str(alert.text)
     # берем часть текста аллерта до точки
+    alert_text = str(alert.text)
     alert_text_thank = alert_text.split('.')[0]
     assert alert_text_thank == 'Thank you for your review'

@@ -38,7 +38,7 @@ def test_login_incorrect_admin(browser, url, wait):
     login_page.send_keys(user_name)
     browser.find_element_by_css_selector('#input-password').send_keys(user_password)
     browser.find_element_by_css_selector('[type="submit"]').click()
-    # ждем danger аллерта и получаем текст аллерта
+    # ждем danger аллерта
     alert_danger = browser.find_element_by_css_selector('.alert-danger')
     displayed_alert = alert_danger.is_displayed()
     assert displayed_alert is True
