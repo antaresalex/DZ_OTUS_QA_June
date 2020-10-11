@@ -21,6 +21,9 @@ class BasePage:
     def _click(self, selector, index=0):
         ActionChains(self.browser).move_to_element(self.__element(selector, index)).click().perform()
 
+    def _go_to_element(self, selector, link_text=None, index=0):
+        return self.__element(selector, index, link_text).location_once_scrolled_into_view
+
     def _input(self, selector, value, index=0):
         element = self.__element(selector, index)
         element.clear()
@@ -29,5 +32,5 @@ class BasePage:
     def _wait_for_visible(self, selector, link_text=None, index=0, wait=3):
         return WebDriverWait(self.browser, wait).until(EC.visibility_of(self.__element(selector, index, link_text)))
 
-    def _get_element_text(self, selector, index):
+    def _get_element_text(self, selector, index=0):
         return self.__element(selector, index).text
