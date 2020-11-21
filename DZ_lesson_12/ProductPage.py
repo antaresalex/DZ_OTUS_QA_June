@@ -8,7 +8,7 @@ from .BasePage import BasePage
 # нажимаем на добавить в корзину add_to_cart
 # открываем написание ревью open_review
 # отправляем ревью send_review
-# получаем имя продукта на странице
+# получаем продукт по имени на любой странице по поиску по тексту (уносим в бейз)
 # получаем стоимость продукта на Product Page
 
 
@@ -18,10 +18,11 @@ class ProductPage(BasePage):
     ADD_TO_WISHLIST = {'css': '[data-original-title="Add to Wish List"]'}
     ADD_TO_CART = {'css': '#button-cart'}
     PRODUCT_NAME = {'css': '#content .col-sm-4 h1'}
+    PRODUCT_PRICE = {'css': 'content .row .col-sm-4 h2'}
     CLICK_REVIEW = {'css': '#content > div > div.col-sm-8 > ul.nav.nav-tabs > li.active > a'}
     SEND_REVIEW = {'css': '.pull-right #button-review'}
 
-    def open_page(self, url, product_id):
+    def open_page(self, url, product_id=49):
         product_page_url = url + self.PRODUCT_PAGE_URL + str(product_id)
         self.browser.get(product_page_url)
 
@@ -34,12 +35,12 @@ class ProductPage(BasePage):
         return self
 
     def get_product_name(self):
-        product_name_text = self._get_element_text(self.PRODUCT_NAME)
-        return product_name_text
+        self._get_element_text(self.PRODUCT_NAME)
+        return self
 
     def get_cart_name_from_page(self):
-        cart_product_name = self._get_element_text(self.get_product_name())
-        return cart_product_name
+        self._get_element_text(self.get_product_name())
+        return self
 
     def click_review(self):
         self._click(self.CLICK_REVIEW)
@@ -47,4 +48,8 @@ class ProductPage(BasePage):
 
     def send_review(self):
         self._click(self.SEND_REVIEW)
+        return self
+
+    def get_product_price(self):
+        self._get_element_text(self.PRODUCT_PRICE)
         return self

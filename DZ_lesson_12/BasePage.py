@@ -32,5 +32,6 @@ class BasePage:
     def _wait_for_visible(self, selector, link_text=None, index=0, wait=3):
         return WebDriverWait(self.browser, wait).until(EC.visibility_of(self.__element(selector, index, link_text)))
 
-    def _get_element_text(self, selector, index=0):
-        return self.__element(selector, index).text
+    # получаем текст или получаем продукт по имени на любой странице по поиску по тексту
+    def _get_element_text(self, selector, link_text=None, index=0):
+        return self.__element(selector, index, link_text).text

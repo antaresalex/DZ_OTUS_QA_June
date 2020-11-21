@@ -30,7 +30,7 @@ def test_add_wish_list(browser, url, product_id, wait):
     browser.find_element_by_css_selector('input[value=Login]').click()
     # переходим в виш лист со страницы аккаунта user
     browser.find_element_by_link_text('Wish List').click()
-    # получаем имя продукта на странице
+    # получаем продукт по имени на любой странице по поиску по тексту
     wish_list_product_name = browser.find_element_by_link_text(product_name).text
     assert wish_list_product_name == product_name
 
@@ -54,7 +54,7 @@ def test_add_cart(browser, url, product_id, wait):
     alert = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.alert-success')))
     # переходим из аллерта в корзину
     alert.find_element_by_link_text('shopping cart').click()
-    # получаем имя продукта на странице
+    # получаем продукт по имени на любой странице по поиску по тексту
     cart_product_name = browser.find_element_by_link_text(product_name).text
     assert cart_product_name == product_name
 
