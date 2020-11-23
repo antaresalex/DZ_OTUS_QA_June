@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
@@ -78,6 +80,7 @@ def test_admin_add_new_customer(browser, url, wait):
     browser.execute_script('window.scrollTo(0, document.body.scrollHeight);')
     browser.find_element_by_css_selector('#input-password').send_keys('123456')
     browser.find_element_by_css_selector('#input-confirm').send_keys('123456')
+    # перематываем наверх страницы
     browser.find_element_by_tag_name('body').send_keys(Keys.CONTROL + Keys.HOME)
     browser.find_element_by_css_selector('[data-original-title="Save"]').click()
     # ждем успешного аллерта и получаем текст аллерта

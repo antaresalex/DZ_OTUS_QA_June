@@ -114,7 +114,7 @@ class AdminPage(BasePage):
         self._go_to_down_page()
         self._input(self.INPUT_PASSWORD_CLIENT, self.CLIENT_PASSWORD)
         self._input(self.INPUT_CLIENT_CONFIRM, self.CLIENT_PASSWORD)
-        self.find_element_by_tag_name('body').send_keys(Keys.CONTROL + Keys.HOME)
+        self._go_up_page()
         self._click(self.SAVE_CLIENT)
 
     def delete_client(self):

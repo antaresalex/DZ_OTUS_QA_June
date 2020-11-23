@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -26,6 +27,9 @@ class BasePage:
 
     def _go_to_down_page(self):
         self.browser.execute_script('window.scrollTo(0, document.body.scrollHeight);')
+
+    def _go_up_page(self):
+        self.browser.find_element_by_tag_name('body').send_keys(Keys.CONTROL + Keys.HOME)
 
     def _input(self, selector, value, index=0):
         element = self.__element(selector, index)
