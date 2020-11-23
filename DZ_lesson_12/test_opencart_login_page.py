@@ -28,10 +28,9 @@ def test_register_user_in_base(browser, url, wait):
     login_page_url = url + f'/index.php?route=account/login'
     browser.get(login_page_url)
     user_email_in_base = 'test404@mail.ru'
-    # ждем появлени элемента продолжить в форме регистрации нового user
+    # ждем появлени элемента продолжить в форме регистрации нового user # вводим данные user
     wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.well a')))
     browser.find_element_by_link_text('Continue').click()
-    # вводим данные user
     browser.find_element_by_css_selector('#input-email').send_keys(user_email_in_base)
     browser.find_element_by_css_selector('#input-telephone').send_keys('+79111111111')
     browser.find_element_by_css_selector('#input-firstname').send_keys('Test')

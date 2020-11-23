@@ -43,6 +43,7 @@ class ProductPage(BasePage):
         return self
 
     def click_review(self):
+        self._wait_for_visible(self.CLICK_REVIEW)
         self._click(self.CLICK_REVIEW)
         return self
 

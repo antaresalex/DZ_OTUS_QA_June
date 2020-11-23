@@ -28,5 +28,6 @@ class CatalogPage(BasePage):
         return self
 
     def go_to_compare_list(self):
+        self._wait_for_visible(self.ALL_COMPARE_LIST)
         self._click(self.ALL_COMPARE_LIST)
         return self

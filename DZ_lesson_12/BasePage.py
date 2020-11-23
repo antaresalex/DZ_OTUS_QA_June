@@ -24,6 +24,9 @@ class BasePage:
     def _go_to_element(self, selector, link_text=None, index=0):
         return self.__element(selector, index, link_text).location_once_scrolled_into_view
 
+    def _go_to_down_page(self):
+        self.browser.execute_script('window.scrollTo(0, document.body.scrollHeight);')
+
     def _input(self, selector, value, index=0):
         element = self.__element(selector, index)
         element.clear()

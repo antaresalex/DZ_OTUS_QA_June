@@ -65,7 +65,6 @@ def test_reviews(browser, url, product_id, wait):
     # открываем страницу продукта
     product_page_url = url + f'/index.php?route=product/product&path=57&product_id=' + str(product_id)
     browser.get(product_page_url)
-    time.sleep(3)
     # открываем написание ревью
     reviews = browser.find_element_by_css_selector('.nav-tabs').find_element_by_partial_link_text('Reviews')
     reviews.click()
