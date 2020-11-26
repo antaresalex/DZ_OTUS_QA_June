@@ -4,7 +4,7 @@
 # переходим из аллерта в корзину
 # ждем danger аллерта
 
-from .BasePage import BasePage
+from DZ_lesson_12.page_objects.BasePage import BasePage
 
 
 class Alert(BasePage):

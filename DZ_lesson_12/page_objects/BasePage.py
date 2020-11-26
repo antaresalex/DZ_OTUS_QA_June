@@ -19,8 +19,8 @@ class BasePage:
             selector = selector['css']
         return self.browser.find_elements(by, selector)[index]
 
-    def _click(self, selector, index=0):
-        ActionChains(self.browser).move_to_element(self.__element(selector, index)).click().perform()
+    def _click(self, selector, index=0, link_text=None):
+        ActionChains(self.browser).move_to_element(self.__element(selector, index, link_text)).click().perform()
 
     def _go_to_element(self, selector, link_text=None, index=0):
         return self.__element(selector, index, link_text).location_once_scrolled_into_view
@@ -31,8 +31,8 @@ class BasePage:
     def _go_up_page(self):
         self.browser.find_element_by_tag_name('body').send_keys(Keys.CONTROL + Keys.HOME)
 
-    def _input(self, selector, value, index=0):
-        element = self.__element(selector, index)
+    def _input(self, selector, value, index=0, link_text=None):
+        element = self.__element(selector, index, link_text)
         element.clear()
         element.send_keys(value)
 

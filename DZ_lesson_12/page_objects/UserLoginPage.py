@@ -1,4 +1,4 @@
-from .BasePage import BasePage
+from DZ_lesson_12.page_objects.BasePage import BasePage
 
 
 # переходим на страницу логина user
@@ -40,8 +40,9 @@ class UserLoginPage(BasePage):
         self._click(self.LOGIN_BUTTON)
         return self
 
+# не работает с передачей линка а не селектора
     def edit_account(self):
-        self._click(self.EDIT_ACCOUNT_BUTTON)
+        self._click(selector=None, link_text=str(self.EDIT_ACCOUNT_BUTTON))
         return self
 
     def go_to_wish_list_from_account(self):
