@@ -17,6 +17,7 @@ class MainPage(BasePage):
     MAIN_PRODUCT_PICTURE = {'css': '.product-layout .img-responsive'}
     MAIN_PRODUCT_PRICE = {'css': '.product-layout .price'}
     MAIN_SLIDER_BUTTON_NEXT = {'css': '#content .swiper-button-next'}
+    MAIN_PRIVACY_POLICY = {'css': 'body footer div div div:nth-child(1) ul li:nth-child(3) a'}
 
     def open_main_page(self, url):
         self.browser.get(url)
@@ -41,4 +42,16 @@ class MainPage(BasePage):
 
     def click_slider_button_next(self):
         self._click(self.MAIN_SLIDER_BUTTON_NEXT)
+        return self
+
+    def go_down(self):
+        self._go_to_down_page()
+        return self
+
+    def get_text(self, selector):
+        self._get_element_text(self, selector)
+        return self
+
+    def click_to_policy(self):
+        self._click(self.MAIN_PRIVACY_POLICY)
         return self

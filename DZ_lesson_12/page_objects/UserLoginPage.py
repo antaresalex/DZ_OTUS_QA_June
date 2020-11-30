@@ -51,7 +51,8 @@ class UserLoginPage(BasePage):
 
     def register_user(self):
         self._wait_for_visible(self.REGISTER_FORM)
-        self._click(self.REGISTER_CONTINUE)
+        # self._click(self.REGISTER_CONTINUE)
+        self.browser.find_element_by_link_text('Continue').click()
         self._input(self.INPUT_EMAIL, self.USER_EMAIL)
         self._input(self.INPUT_TEL, self.USER_TEL)
         self._input(self.INPUT_FIRST_NAME, self.USER_FIRST_NAME)

@@ -7,6 +7,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from PIL import Image
 import math
 import operator
+from DZ_lesson_12.page_objects.MainPage import MainPage
 
 
 # Тестируем Главную /
@@ -15,9 +16,11 @@ import operator
 # Тестируем сайт, что он связан с OpenCart
 def test_example(browser, url, wait):
     # открываем главную
-    browser.get(url)
+    main_page = MainPage(browser)
+    main_page.open_main_page(url)
     # перематываем страницу вниз до конца
-    browser.find_element_by_css_selector('footer p a').send_keys(Keys.END)
+    main_page.go_down()
+    # browser.find_element_by_css_selector('footer p a').send_keys(Keys.END)
     # browser.execute_script('window.scrollTo(0, document.body.scrollHeight);')
     element = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[href="http://www.opencart.com"]')))
     assert element.text == 'OpenCart'
@@ -26,12 +29,11 @@ def test_example(browser, url, wait):
 # Тест 1 открытия Privacy Policy
 def test_click_privacy_policy(browser, url):
     # открываем главную
-    browser.get(url)
+    main_page = MainPage(browser)
+    main_page.open_main_page(url)
     # перематываем страницу вниз до конца
-    browser.find_element_by_css_selector('body footer div div div:nth-child(1) ul li:nth-child(3) a').send_keys(
-        Keys.END)
-    element = browser.find_element_by_css_selector('body footer div div div:nth-child(1) ul li:nth-child(3) a')
-    element.click()
+    main_page.go_down()
+    main_page.click_to_policy()
     new_pade_element = browser.find_element_by_css_selector('#content h1')
     assert new_pade_element.text == 'Privacy Policy'
 

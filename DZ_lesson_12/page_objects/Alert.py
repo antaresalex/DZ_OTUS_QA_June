@@ -29,4 +29,5 @@ class Alert(BasePage):
 
     def wait_danger_alert(self):
         self._wait_for_visible(self.DANGER_ALERT)
-        return self
+        danger_alert_text = self._get_element_text(self.DANGER_ALERT)
+        return danger_alert_text
