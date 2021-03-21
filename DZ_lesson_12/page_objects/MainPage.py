@@ -1,4 +1,4 @@
-from DZ_lesson_12.page_objects.BasePage import BasePage
+import BasePage
 
 
 # открываем главную

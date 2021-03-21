@@ -1,5 +1,6 @@
-from DZ_lesson_12.page_objects.UserLoginPage import UserLoginPage
-from DZ_lesson_12.page_objects.Alert import Alert
+import pytest
+from QA_OTUS_DZ_June.DZ_lesson_12.page_objects.UserLoginPage import UserLoginPage
+from QA_OTUS_DZ_June.DZ_lesson_12.page_objects import Alert
 
 
 # Тестируем страницу логина /index.php?route=account/login
@@ -9,7 +10,8 @@ def test_login_user_page_object(browser, url):
     user_login_page.open_page(url)
     user_login_page.log_in_as_user()
     user_email = user_login_page.USER_EMAIL
-    browser.find_element_by_link_text('Edit Account').click()
+    user_login_page.edit_account()
+    # browser.find_element_by_link_text('Edit Account').click()
     # получаем данные e-mail из Your Personal Details
     login_user_email = browser.execute_script('return document.getElementById("input-email").value;')
     assert login_user_email == user_email

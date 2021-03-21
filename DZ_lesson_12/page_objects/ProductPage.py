@@ -1,4 +1,4 @@
-from DZ_lesson_12.page_objects.BasePage import BasePage
+import BasePage
 
 # открываем страницу продукта
 # product_page_url = url + f'/index.php?route=product/product&path=57&product_id='

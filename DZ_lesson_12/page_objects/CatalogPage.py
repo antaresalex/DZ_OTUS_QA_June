@@ -5,7 +5,8 @@
 # добавляем товар в сравнение
 # переходим в список сравнения выбранных товаров
 
-from DZ_lesson_12.page_objects.BasePage import BasePage
+# from DZ_lesson_12.page_objects.BasePage import BasePage
+import BasePage
 
 
 class CatalogPage(BasePage):

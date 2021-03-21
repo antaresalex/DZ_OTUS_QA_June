@@ -14,6 +14,7 @@ class BasePage:
         by = None
         if link_text:
             by = By.LINK_TEXT
+            selector = link_text
         elif 'css' in selector.keys():
             by = By.CSS_SELECTOR
             selector = selector['css']
